@@ -1,6 +1,7 @@
 import { useState } from "react";
 import NavBar from "./components/Layout/NavBar";
 import Pagination from "./components/Layout/Pagination";
+import hook from "./hooks/hook";
 
 function App() {
 
@@ -9,6 +10,8 @@ function App() {
   const [maxPage, setMaxPage] = useState(1)
   const [isSearching, setIsSearching] = useState(false)
   const [searchText, setSearchText] = useState('')
+
+  const { isLoading, error, sendRequest } = hook()
 
   useEffect(() => {
     let url;
@@ -29,6 +32,9 @@ function App() {
 
     sendRequestHandler(url);
   }, [currentPage, isSearching, searchText, sendRequest]);
+
+  
+
 
   return (
     <>
