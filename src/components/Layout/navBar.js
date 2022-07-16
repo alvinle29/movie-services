@@ -5,7 +5,7 @@ const NavBar = ({ search, reload }) => {
 
 	const submitSearchHandler = (e) => {
 		e.preventDefault()
-		submitSearch(searchRef.current.value)
+		search(searchRef.current.value)
 		searchRef.current.value = ''
 	}
 

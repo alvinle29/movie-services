@@ -7,7 +7,7 @@ const Pagination = ({ currentPage, maxPage, navigatePageHandler }) => {
             >
                 -
             </button>
-            <span className={"current-page"}>
+            <span className={"current__page"}>
                 {currentPage} / {maxPage}
             </span>
             <button
@@ -20,4 +20,4 @@ const Pagination = ({ currentPage, maxPage, navigatePageHandler }) => {
     );
 };
 
-export default Footer;
+export default Pagination;

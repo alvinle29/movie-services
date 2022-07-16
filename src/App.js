@@ -1,12 +1,14 @@
-import './App.css';
-import NavBar from './components/Layout/navBar';
-import Footer from './components/Layout/pagination';
+import NavBar from "./components/Layout/NavBar";
+import Pagination from "./components/Layout/Pagination";
 
 function App() {
+
+
+
   return (
     <>
       <NavBar/>
-      <Footer/>
+      <Pagination/>
     </>
   );
 }
