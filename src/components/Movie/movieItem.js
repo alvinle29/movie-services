@@ -10,18 +10,18 @@ const MovieItem = ({ title, overview, img, score }) => {
   };
 
   return (
-    <div className={classes['movie-item']}>
+    <div className='movie-item'>
       <img src={process.env.REACT_APP_IMG_API + img} alt={title}></img>
-      <div className={classes['info']}>
-        <p className={classes['title']}>{title}</p>
+      <div className='info'>
+        <p className='title'>{title}</p>
         <span
-          className={`${classes['score']} ${classes[changeScoreColor(score)]}`}
+          className={`${'score'} ${classes[changeScoreColor(score)]}`}
         >
           {score.toFixed(1)}
         </span>
       </div>
 
-      <div className={classes['overview']}>
+      <div className='overview'>
         <h2>Overview</h2>
         <p>{overview}</p>
       </div>

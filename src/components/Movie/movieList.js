@@ -2,7 +2,7 @@ import MovieItem from './movieItem';
 
 const MoviesList = ({ movies }) => {
   return (
-    <main className={classes['movies-list']}>
+    <main className='movies-list'>
       {movies.length > 0 &&
         movies.map((movie, index) => (
           <MovieItem
