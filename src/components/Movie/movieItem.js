@@ -15,7 +15,7 @@ const MovieItem = ({ title, overview, img, score }) => {
       <div className='info'>
         <p className='title'>{title}</p>
         <span
-          className={`${'score'} ${classes[changeScoreColor(score)]}`}
+          className={`${'score'} ${changeScoreColor(score)}`}
         >
           {score.toFixed(1)}
         </span>
