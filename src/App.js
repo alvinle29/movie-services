@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 import NavBar from "./components/Layout/NavBar";
 import Pagination from "./components/Layout/Pagination";
+import MoviesList from "./components/Movie/movieList";
 import hook from "./hooks/hook";
 
 function App() {
@@ -10,7 +12,7 @@ function App() {
   const [maxPage, setMaxPage] = useState(1)
   const [isSearching, setIsSearching] = useState(false)
   const [searchText, setSearchText] = useState('')
-
+ 
   const { isLoading, error, sendRequest } = hook()
 
   useEffect(() => {
@@ -33,13 +35,51 @@ function App() {
     sendRequestHandler(url);
   }, [currentPage, isSearching, searchText, sendRequest]);
 
-  
+  const navigatePageHandler = (increase) => {
+    if (increase === true) {
+      setCurrentPage((prev) => prev + 1);
+    } else {
+      setCurrentPage((prev) => prev - 1);
+    }
+  };
 
+  const submitSearch = (text) => {
+    if (text) {
+      setIsSearching(true);
+      setSearchText(text);
+      setCurrentPage(1);
+    }
+  };
+
+  const reloadHandler = () => {
+    setIsSearching(false);
+    setSearchText('');
+    setCurrentPage(1);
+  };
+
+  let content = <p>Found no movies!</p>;
+
+  if (movies.length > 0) {
+    content = <MoviesList movies={movies} />;
+  }
+
+  if (error) {
+    content = <p>{error}</p>;
+  }
+
+  if (isLoading) {
+    content = <p>Loading...</p>;
+  }
 
   return (
     <>
-      <NavBar/>
-      <Pagination/>
+      <NavBar submitSearch={submitSearch} reloadHandler={reloadHandler} />
+      {content}
+      <Pagination
+        currentPage={currentPage}
+        maxPage={maxPage}
+        navigatePageHandler={navigatePageHandler}
+      />
     </>
   );
 }

@@ -1,5 +1,4 @@
-import MovieItem from './MovieItem';
-import classes from './MoviesList.module.css';
+import MovieItem from './movieItem';
 
 const MoviesList = ({ movies }) => {
   return (

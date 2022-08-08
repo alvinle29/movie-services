@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 
-const hook = () => {
+const useHook = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -31,4 +31,4 @@ const hook = () => {
   };
 };
 
-export default hook;
+export default useHook;

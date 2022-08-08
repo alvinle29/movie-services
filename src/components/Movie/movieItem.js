@@ -1,5 +1,3 @@
-import classes from './MovieItem.module.css';
-
 const MovieItem = ({ title, overview, img, score }) => {
   const changeScoreColor = (score) => {
     if (score >= 8) {
