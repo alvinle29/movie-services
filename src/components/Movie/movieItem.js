@@ -1,3 +1,5 @@
+import styles from "./movieItem.module.css";
+
 const MovieItem = ({ title, overview, img, score }) => {
   const changeScoreColor = (score) => {
     if (score >= 8) {
@@ -10,18 +12,18 @@ const MovieItem = ({ title, overview, img, score }) => {
   };
 
   return (
-    <div className='movie-item'>
+    <div className={styles.movie_item}>
       <img src={process.env.REACT_APP_IMG_API + img} alt={title}></img>
-      <div className='info'>
-        <p className='title'>{title}</p>
+      <div className={styles.info}>
+        <p className={styles.title}>{title}</p>
         <span
-          className={`${'score'} ${changeScoreColor(score)}`}
+          className={`${styles.score} ${changeScoreColor(score)}`}
         >
           {score.toFixed(1)}
         </span>
       </div>
 
-      <div className='overview'>
+      <div className={styles.overview}>
         <h2>Overview</h2>
         <p>{overview}</p>
       </div>

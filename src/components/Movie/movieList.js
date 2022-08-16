@@ -1,8 +1,9 @@
 import MovieItem from './movieItem';
+import styles from './movieList.module.css'
 
 const MoviesList = ({ movies }) => {
   return (
-    <main className='movies-list'>
+    <main className={styles.movies_list}>
       {movies.length > 0 &&
         movies.map((movie, index) => (
           <MovieItem
