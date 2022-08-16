@@ -1,13 +1,15 @@
+import styles from './Pagination.module.css'
+
 const Pagination = ({ currentPage, maxPage, navigatePageHandler }) => {
 	return (
-		<footer className={"footer"}>
+		<footer className={styles.footer}>
 			<button
 				onClick={() => navigatePageHandler(false)}
 				disabled={currentPage === 1}
 			>
 				-
 			</button>
-			<span className={"current__page"}>
+			<span className={styles.current__page}>
 				{currentPage} / {maxPage}
 			</span>
 			<button

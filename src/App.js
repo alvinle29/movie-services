@@ -13,7 +13,7 @@ function App() {
   const [isSearching, setIsSearching] = useState(false)
   const [searchText, setSearchText] = useState('')
  
-  const { isLoading, error, sendRequest } = hook()
+  const { isLoading, e, sendRequest } = hook()
 
   useEffect(() => {
     let url;
@@ -63,8 +63,8 @@ function App() {
     content = <MoviesList movies={movies} />;
   }
 
-  if (error) {
-    content = <p>{error}</p>;
+  if (e) {
+    content = <p>{e}</p>;
   }
 
   if (isLoading) {
