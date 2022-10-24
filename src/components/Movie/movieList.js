@@ -2,6 +2,8 @@ import MovieItem from './movieItem';
 import styles from './movieList.module.css'
 
 const MoviesList = ({ movies }) => {
+
+  console.log(movies)
   return (
     <main className={styles.movies_list}>
       {movies.length > 0 &&

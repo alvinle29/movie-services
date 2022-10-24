@@ -8,7 +8,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #160049;
+  background-color: #00493d;
   color: #ffffff;
   z-index: 10;
   font-size: 20px;
@@ -27,7 +27,7 @@ button:disabled {
   cursor: default;
 }
 
-.current-page {
+.current__page {
   margin: 0 20px;
   text-align: center;
 }
