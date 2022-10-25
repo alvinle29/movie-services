@@ -1,5 +1,5 @@
-import MovieItem from './movieItem';
-import styles from './movieList.module.css'
+import MovieItem from './MovieItem'
+import styles from './MovieList.module.css'
 
 const MoviesList = ({ movies }) => {
 

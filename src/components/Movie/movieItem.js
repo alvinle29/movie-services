@@ -1,4 +1,4 @@
-import styles from './movieItem.module.css';
+import styles from './MovieItem.module.css'
 
 const MovieItem = ({ title, overview, img, score }) => {
   const changeScoreColor = (score) => {

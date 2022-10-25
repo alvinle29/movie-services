@@ -2,7 +2,7 @@ import { useRef } from 'react'
 import styles from './NavBar.module.css'
 
 const NavBar = ({ submitSearch, reloadHandler }) => {
-	const searchRef = useRef('');
+	const searchRef = useRef('')
 
 	const submitSearchHandler = (e) => {
 		e.preventDefault()
